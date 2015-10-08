@@ -1,0 +1,48 @@
+<div class="challenge">
+	<h2>The Challenge:</h2>
+	<p>Learn about interactive rebase, a useful technique to edit your git history</p>
+</div>
+
+<h2>Configuring git-editor</h2>
+
+<p>When we do interactive rebase, git will open the editor of our choice to edit the history</p>
+<p>We have to do some configuration to edit the editor that is used</p>
+
+<p><a href="http://stackoverflow.com/questions/10564/how-can-i-set-up-an-editor-to-work-with-git-on-windows">See this stackoverflow question to see how to configure your editor under windows</a></p>
+<p><a href="https://help.github.com/articles/associating-text-editors-with-git/">See this github article to see how to configure your editor under other platforms</a></p>
+
+<h2>Understanding interactive rebase</h2>
+
+<p>Interactive rebase will present you with a list of commits.</p>
+<p>If you just close your editor without editing anything, git will not change anything to your repository</p>
+
+<p>You have multiple choices : you have to change the word `pick` to do something else with a commit</p>
+<p>You can do one of the following:
+	<ul>
+		<li><b>reword</b> : to rename a commit message</li>
+		<li><b>squash</b> : will put the commit with the commit over it</li>
+</ul></p>
+
+<h2>Starting interactive rebase</h2>
+
+<p>To start interactive rebase, write: </p>
+
+<p><code>$ git rebase --interactive `start-commit`</code></p>
+
+<p>The objective is to have only the following commits :
+<ul>
+<li>Add documentation</li>
+<li>Add code</li>
+<li>Initial commit</li>
+</ul>
+</p>
+
+<p>You can then choose what to do with each commit</p>
+
+<p>To edit even the first commit, use `git rebase --interactive --root`</p>
+
+
+<div class="verify">
+	<h3>Verify with </h3> <code>git-it verify</code><br>
+	<h3>Go to the next challenge </h3> <code>git-it</code>
+</div>

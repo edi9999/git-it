@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Git-it Guide</title>
+        <meta name="description" content="learn git and github">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../assets/imgs/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+      <!--[if lt IE 8]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+        <header class="site-header">
+  <div class="nav u-posFixed">
+    <div class="wrap-width u-textCenter">
+      <a href="merge_tada.html"
+        <span class="u-floatLeft hand">☜</span>
+      </a>
+      <a class="filledblock" href="../index.html">Git-it</a>
+      <a href="bisect_kungfu.html"
+        <span class="u-floatRight hand">☞</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="wrapper">
+    <div class="u-floatLeft">
+      <span class="all-caps">CHALLENGE</span>
+      <h2 class="challenge-name">rebasing stuff</h2>
+    </div>
+    <div class="u-floatRight u-textRight">
+      <span class="all-caps">NUMBER</span>
+      <h2 class="challenge-name">12 / 11</h2>
+    </div>
+  </div>
+</header>
+      <div class="wrapper">
+
+              <div class="challenge">
+        <h2>The Challenge:</h2>
+        <p>Learn about rebasing, and rebase the doc branch onto the master branch</p>
+       </div>
+
+      <h2>Step: Clone the git repository</h2>
+
+      <p>We setup a git repository so that you can train to do git rebase</p>
+
+      <p><code>$ git clone https://github.com/edi9999/git-test-iut.git</code></p>
+
+      <h2>Step: View the commit graph</h2>
+
+      <p>We want to see what the git graph looks like. We have multiple solutions for this.
+      To see the commits, you can use one of the multiple git guis (SourceTree, ou SmartGit, ou tig, ou gitk)</p>
+
+      <p>Try this command</p>
+
+      <p><code>$ gitk --all</code></p>
+
+      <h2>Step: Rebase the doc branch into the master branch</h2>
+
+      <p>The repository has two branches : <b>master</b> and <b>doc</b>.</p>
+
+      <p>As you can see, the doc branch starts on an old commit of master. What rebase does is to change the
+          starting point of a branch, to an other commit. What we want to do here is to set the starting commit of
+      the branch <b>doc</b> to be <b>master</b>.</p>
+
+      <p>First, checkout to the <b>doc</b> branch. If you don't remember how to do this, open the page about branches</p>
+
+      <p>We want to rebase the branch onto <b>master</b>. To rebase a branch onto another branch, we just have to write</p>
+
+      <p><code>$ git rebase `branch`</code></p>
+
+      <p>where branch is the branch we want to rebase the currently checked out branch</p>
+
+      <div class="verify">
+        <h3>Verify with </h3> <code>git-it verify</code><br>
+        <h3>Go to the next challenge </h3> <code>git-it</code>
+      </div>
+
+
+        <div class="prenext">
+  <div class="u-floatLeft">
+    <a href="merge_tada.html" class="u-inline-block all-caps">merge tada
+    <div>⤶ </div>
+    </a>
+  </div>
+  <div class="u-textRight u-floatRight">
+    <a href="bisect_kungfu.html" class="u-inlineBlock all-caps">bisect kungfu
+    <div>⤷</div>
+    </a>
+  </div>
+</div>
+<footer>
+  <ul>
+    <li class="all-caps"><a href="../index.html"><strong>Git-it Challenges</strong></a></li>
+    <li class="all-caps"><a href="../about.html">About</a></li>
+    <li class="all-caps"><a href="../dictionary.html">Dictionary</a></li>
+    <li class="all-caps"><a href="../resources.html">Resources</a></li>
+    <li class="all-caps">
+      <a href="http://github.com/jlord/git-it/issues/new" target="_blank">Open an Issue</a>
+    </li>
+  </ul>
+</footer>
+
+      </div>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-52690821-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </body>
+</html>

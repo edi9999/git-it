@@ -1,0 +1,53 @@
+      <div class="challenge">
+        <h2>The Challenge:</h2>
+        <p>Learn about bisecting, a useful technique to find when a bug first occured</p>
+       </div>
+
+      <h2>Step: A user of our software just reported a bug</h2>
+
+	  <p>One of our user has reported us a bug : When you enter the following numbers into a file: (file.txt)
+	  </p>
+
+	  <p>
+		  <em>
+			  25<br>
+			  25<br>
+			  50<br>
+</em>
+	  </code>
+
+	  <p>and run </p>
+
+	  <p><code>$ node index.js file.txt</code></p>
+
+	  <p>The result is not 100 , which is 25+50+50</p>
+
+      <h2>Step: Find the source of the issue</h2>
+
+	  <p>Whenever you use git history, they is a great feature that makes it easy to find what commit introduced a bug
+		The feature is called `git bisect`
+		With git bisect, you can Use binary search to find the commit that introduced a bug</p>
+
+      <p>You first have to start git bisect, it is as easy as</p>
+
+	  <p><code>$ git bisect start</code></p>
+
+      <p>You then have to say which commits are good and which are bad. Bad means that the bug is present. Good means that the bug is not present</p>
+
+	  <p><code>$ git bisect good `commit`</code></p>
+	  <p><code>$ git bisect bad `commit`</code></p>
+
+	  <p>After these two initial commands, git will start to do a binary search and will ask you whether the commit is good or bad. Just run the test that we created in the first step, and continue to run
+	  `git bisect good` or `git bisect bad` depending on if the bug is present or not on that commit</p>
+
+	  <p>Whenever git-bisect is finished, it will output : `commit` is the first bad commit</p>
+
+      <div class="verify">
+        <h3>Verify with </h3> <code>git-it verify</code><br>
+        <h3>Go to the next challenge </h3> <code>git-it</code>
+      </div>
+
+	  <p>You can also automate the git-bisect step with a script.</p>
+	  <p>Please search for git bisect run, by doing : </p>
+
+	  <p><code>$ git help bisect</code></p>

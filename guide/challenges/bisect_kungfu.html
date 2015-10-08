@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Git-it Guide</title>
+        <meta name="description" content="learn git and github">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="../assets/imgs/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="../assets/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+      <!--[if lt IE 8]>
+          <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+        <header class="site-header">
+  <div class="nav u-posFixed">
+    <div class="wrap-width u-textCenter">
+      <a href="rebasing_stuff.html"
+        <span class="u-floatLeft hand">☜</span>
+      </a>
+      <a class="filledblock" href="../index.html">Git-it</a>
+      <a href="rewriting_history.html"
+        <span class="u-floatRight hand">☞</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="wrapper">
+    <div class="u-floatLeft">
+      <span class="all-caps">CHALLENGE</span>
+      <h2 class="challenge-name">bisect kungfu</h2>
+    </div>
+    <div class="u-floatRight u-textRight">
+      <span class="all-caps">NUMBER</span>
+      <h2 class="challenge-name">13 / 11</h2>
+    </div>
+  </div>
+</header>
+      <div class="wrapper">
+
+              <div class="challenge">
+        <h2>The Challenge:</h2>
+        <p>Learn about bisecting, a useful technique to find when a bug first occured</p>
+       </div>
+
+      <h2>Step: A user of our software just reported a bug</h2>
+
+	  <p>One of our user has reported us a bug : When you enter the following numbers into a file: (file.txt)
+	  </p>
+
+	  <p>
+		  <em>
+			  25<br>
+			  25<br>
+			  50<br>
+</em>
+	  </code>
+
+	  <p>and run </p>
+
+	  <p><code>$ node index.js file.txt</code></p>
+
+	  <p>The result is not 100 , which is 25+50+50</p>
+
+      <h2>Step: Find the source of the issue</h2>
+
+	  <p>Whenever you use git history, they is a great feature that makes it easy to find what commit introduced a bug
+		The feature is called `git bisect`
+		With git bisect, you can Use binary search to find the commit that introduced a bug</p>
+
+      <p>You first have to start git bisect, it is as easy as</p>
+
+	  <p><code>$ git bisect start</code></p>
+
+      <p>You then have to say which commits are good and which are bad. Bad means that the bug is present. Good means that the bug is not present</p>
+
+	  <p><code>$ git bisect good `commit`</code></p>
+	  <p><code>$ git bisect bad `commit`</code></p>
+
+	  <p>After these two initial commands, git will start to do a binary search and will ask you whether the commit is good or bad. Just run the test that we created in the first step, and continue to run
+	  `git bisect good` or `git bisect bad` depending on if the bug is present or not on that commit</p>
+
+	  <p>Whenever git-bisect is finished, it will output : `commit` is the first bad commit</p>
+
+      <div class="verify">
+        <h3>Verify with </h3> <code>git-it verify</code><br>
+        <h3>Go to the next challenge </h3> <code>git-it</code>
+      </div>
+
+	  <p>You can also automate the git-bisect step with a script.</p>
+	  <p>Please search for git bisect run, by doing : </p>
+
+	  <p><code>$ git help bisect</code></p>
+
+
+        <div class="prenext">
+  <div class="u-floatLeft">
+    <a href="rebasing_stuff.html" class="u-inline-block all-caps">rebasing stuff
+    <div>⤶ </div>
+    </a>
+  </div>
+  <div class="u-textRight u-floatRight">
+    <a href="rewriting_history.html" class="u-inlineBlock all-caps">rewriting history
+    <div>⤷</div>
+    </a>
+  </div>
+</div>
+<footer>
+  <ul>
+    <li class="all-caps"><a href="../index.html"><strong>Git-it Challenges</strong></a></li>
+    <li class="all-caps"><a href="../about.html">About</a></li>
+    <li class="all-caps"><a href="../dictionary.html">Dictionary</a></li>
+    <li class="all-caps"><a href="../resources.html">Resources</a></li>
+    <li class="all-caps">
+      <a href="http://github.com/jlord/git-it/issues/new" target="_blank">Open an Issue</a>
+    </li>
+  </ul>
+</footer>
+
+      </div>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-52690821-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </body>
+</html>
